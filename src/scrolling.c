@@ -11,6 +11,7 @@ void scrolling_map(sys_t *sys)
 {
 	int i = 1;
 
+	sys->reset_map += 14;
 	for (i = 1; sys->obj[i] != NULL; i++) {
 		sys->obj[i]->pos.x = sys->obj[i]->pos.x - 14;
 		sfSprite_setPosition(sys->obj[i]->sprite, sys->obj[i]->pos);
@@ -21,10 +22,12 @@ void scrolling_infinite_map(sys_t *sys)
 {
 	int i = 1;
 
+	sys->reset_map += 14;
 	for (i = 1; sys->obj[i] != NULL; i++) {
-		if (sys->obj[i]->pos.x <= -200)
-			sys->obj[i]->pos.x = sys->obj[i]->pos.x + 4000;
-		sys->obj[i]->pos.x = sys->obj[i]->pos.x - 10;
+		if (sys->obj[i]->pos.x <= -200) {
+			sys->obj[i]->pos.x = sys->obj[i]->pos.x + 2200;
+		}
+		sys->obj[i]->pos.x = sys->obj[i]->pos.x - 14;
 		sfSprite_setPosition(sys->obj[i]->sprite, sys->obj[i]->pos);
 	}
 }

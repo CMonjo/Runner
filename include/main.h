@@ -80,5 +80,9 @@
 	void check_jump(sys_t *sys);
 	void display_score(sys_t *sys);
 	void jump_player(sys_t *sys);
+	void render_end(sys_t *sys);
 	void end_menu(sys_t *sys);
+	void which_end_option(sys_t *sys);
+	void display_end_menu(sys_t *sys);
+	void restart_game_loop(sys_t *sys);
 #endif

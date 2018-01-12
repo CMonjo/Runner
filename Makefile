@@ -25,6 +25,7 @@ SRC	=	src/main.c		\
 		src/score.c		\
 		src/game_detection.c	\
 		src/end_game_menu.c	\
+		src/restart_game.c	\
 		src/objects_handling.c
 
 OBJ	=	$(SRC:.c=.o)

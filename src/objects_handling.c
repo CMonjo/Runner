@@ -22,7 +22,6 @@ void init_objects(sys_t *sys)
 	sys->bg[4] = add_sprite_bg("assets/img/hud/bg_first.png", (sfVector2f){0, 0}, (sfIntRect){0, 0, 3840, 1080});
 	sys->bg[5] = add_sprite_bg("assets/img/hud/bg_second.png", (sfVector2f){0, 0}, (sfIntRect){0, 0, 3840, 1080});
 	sys->bg[6] = add_sprite_bg("assets/img/hud/bg_third.png", (sfVector2f){0, 0}, (sfIntRect){0, 0, 3840, 1080});
-	sys->bg[7] = add_sprite_bg("assets/img/hud/pause.png", (sfVector2f){1830, 10}, (sfIntRect){0, 0, 64, 64});
 }
 
 void init_text_menu(sys_t *sys)
@@ -43,9 +42,10 @@ void init_text_menu(sys_t *sys)
 	sys->menu[9] = set_text("assets/font/bold.ttf", (sfVector2f){500, 100}, "Choose your skin !", 100);
 	sys->menu[10] = set_text("assets/font/bold.ttf", (sfVector2f){180, 0}, "0", 50);
 	sys->menu[11] = set_text("assets/font/bold.ttf", (sfVector2f){100, 900}, "Your score : ", 50);
-	sys->menu[12] = set_text("assets/font/bold.ttf", (sfVector2f){700, 150}, "You win !", 120);
-	sys->menu[13] = set_text("assets/font/bold.ttf", (sfVector2f){700, 150}, "You lose !", 120);
-	sys->menu[14] = set_text("assets/font/bold.ttf", (sfVector2f){820, 600}, "RageQuit", 70);
+	sys->menu[12] = set_text("assets/font/bold.ttf", (sfVector2f){650, 150}, "You win !", 120);
+	sys->menu[13] = set_text("assets/font/bold.ttf", (sfVector2f){650, 150}, "You lose !", 120);
+	sys->menu[14] = set_text("assets/font/bold.ttf", (sfVector2f){400, 600}, "RageQuit", 70);
+	sys->menu[15] = set_text("assets/font/bold.ttf", (sfVector2f){1200, 600}, "Restart", 70);
 
 }
 
@@ -69,7 +69,6 @@ void render_objects(sys_t *sys)
 		sfRenderWindow_drawSprite(sys->win, sys->obj[i]->sprite, NULL);
 		sfSprite_setTextureRect(sys->obj[i]->sprite, sys->obj[i]->rect);
 	}
-	sfRenderWindow_drawSprite(sys->win, sys->bg[7]->sprite, NULL);
 	sfRenderWindow_drawSprite(sys->win, sys->obj[0]->sprite, NULL);
 	sfSprite_setTextureRect(sys->obj[0]->sprite, sys->obj[0]->rect);
 	sfRenderWindow_drawText(sys->win, sys->menu[0]->text, NULL);

@@ -37,3 +37,13 @@ void option_menu(sys_t *sys)
 		sfClock_restart(sys->clock);
 	}
 }
+
+void end_menu(sys_t *sys)
+{
+	render_end(sys);
+	if (sys->seconds > 0.1) {
+		which_end_option(sys);
+		display_end_menu(sys);
+		sfClock_restart(sys->clock);
+	}
+}

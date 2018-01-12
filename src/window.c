@@ -49,8 +49,7 @@ void which_mod(sys_t *sys)
 	if (sys->infinite_mod == 0) {
 		scrolling_map(sys);
 		check_victory(sys);
-	}
-	else
+	} else
 		scrolling_infinite_map(sys);
 }
 

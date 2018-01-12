@@ -40,6 +40,7 @@ typedef struct sys_s {
 	sfMusic *music_menu;
 	sfMusic *music_menu_back;
 	int status;
+	int reset_map;
 	int count_obj;
 	int key;
 	int game_status;
