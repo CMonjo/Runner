@@ -67,8 +67,9 @@ int init_runner(char **av)
 
 int main(int ac, char **av)
 {
-	if (av[1] != NULL && my_strlen(av[1]) == 2 && av[1][0] == '-' && av[1][1] == 'h') {
-		print_h("map/info.txt");
+	if (av[1] != NULL && my_strlen(av[1]) == 2 && av[1][0]
+	== '-' && av[1][1] == 'h') {
+		print_h(".legend");
 		return (0);
 	}
 	else if (ac != 2 && ac != 3) {

@@ -44,7 +44,7 @@ void check_collision(sys_t *sys)
 	for (i = 1; sys->obj[i] != NULL; i++) {
 		obj_x = sys->obj[i]->pos.x;
 		obj_y = sys->obj[i]->pos.y;
-		if (((player_x + 75 >= obj_x && player_x <= obj_x) && (player_y + 100 >= obj_y && player_y < obj_y) && sys->obj[i]->kill == 1)) {
+		if (((player_x + 75 >= obj_x && player_x <= obj_x) && (player_y + 120 >= obj_y && player_y < obj_y + 100) && sys->obj[i]->kill == 1)) {
 				sys->game_status = 1;
 				sys->status = 1;
 		}

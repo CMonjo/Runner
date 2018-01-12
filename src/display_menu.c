@@ -18,21 +18,22 @@ void back_option(sys_t *sys)
 
 void main_menu(sys_t *sys)
 {
-	render_main(sys);
+	render_main_menu(sys);
 	if (sys->seconds > 0.1) {
-		which_select_main(sys);
-		start_game(sys);
-		choose_option(sys);
+		select_main_menu(sys);
+		choose_game_main_menu(sys);
+		choose_player_main_menu(sys);
+		choose_option_main_menu(sys);
 		display_text_main_menu(sys);
 	}
 }
 
 void option_menu(sys_t *sys)
 {
-	render_option(sys);
+	render_option_menu(sys);
 	if (sys->seconds > 0.1) {
-		which_select_option(sys);
-		select_color_player(sys);
+		select_option_menu(sys);
+		choose_color_player_option_menu(sys);
 		display_text_option_menu(sys);
 		sfClock_restart(sys->clock);
 	}

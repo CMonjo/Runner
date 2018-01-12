@@ -52,7 +52,5 @@ void render_end(sys_t *sys)
 		sfRenderWindow_drawText(sys->win, sys->menu[12]->text, NULL);
 	if (sys->game_status == 1)
 		sfRenderWindow_drawText(sys->win, sys->menu[13]->text, NULL);
-
-	analyse_events(sys);
 	sfRenderWindow_display(sys->win);
 }

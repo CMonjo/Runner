@@ -7,7 +7,15 @@
 
 #include "main.h"
 
-void which_select_main(sys_t *sys)
+void move_select_main_menu(sys_t *sys)
+{
+	if (sys->select > 4)
+		sys->select = 1;
+	if (sys->select < 1)
+		sys->select = 4;
+}
+
+void select_main_menu(sys_t *sys)
 {
 	if (sfKeyboard_isKeyPressed(sfKeyUp)) {
 		sys->select --;
@@ -17,13 +25,10 @@ void which_select_main(sys_t *sys)
 		sys->select ++;
 		sfMusic_play(sys->music_menu);
 	}
-	if (sys->select > 4)
-		sys->select = 1;
-	if (sys->select < 1)
-		sys->select = 4;
+	move_select_main_menu(sys);
 }
 
-void choose_option(sys_t *sys)
+void choose_option_main_menu(sys_t *sys)
 {
 	if (sfKeyboard_isKeyPressed(sfKeyReturn) && sys->select == 3) {
 		sys->select = 1;
@@ -33,39 +38,35 @@ void choose_option(sys_t *sys)
 		sfRenderWindow_close(sys->win);
 }
 
-void start_game(sys_t *sys)
+void choose_player_main_menu(sys_t *sys)
+{
+	if (sfKeyboard_isKeyPressed(sfKeyReturn) && sys->select == 2
+	&& sys->have_player == 1) {
+		sys->infinite_mod = 1;
+		sys->status = 3;
+	}
+	else if (sfKeyboard_isKeyPressed(sfKeyReturn) && sys->select == 2
+	&& sys->have_player == 0) {
+		sys->obj[0] = add_sprite(sys,
+			"assets/img/chracters/player_red.png",
+			(sfVector2f){100, 764}, (sfIntRect){0, 0, 118, 100}, 0);
+		sys->infinite_mod = 1;
+		sys->status = 3;
+	}
+}
+
+void choose_game_main_menu(sys_t *sys)
 {
 	if (sfKeyboard_isKeyPressed(sfKeyReturn) && sys->select == 1
 	&& sys->have_player == 1)
 		sys->status = 3;
 	else if (sfKeyboard_isKeyPressed(sfKeyReturn) && sys->select == 1
 	&& sys->have_player == 0) {
-		sys->obj[0] = add_sprite(sys, "assets/img/chracters/player_red.png",
-		(sfVector2f){100, 764}, (sfIntRect){0, 0, 118, 100}, 0);
+		sys->obj[0] = add_sprite(sys,
+			"assets/img/chracters/player_red.png",
+			(sfVector2f){100, 764}, (sfIntRect){0, 0, 118, 100}, 0);
 		sys->status = 3;
 	}
-	if (sfKeyboard_isKeyPressed(sfKeyReturn) && sys->select == 2 && sys->have_player == 1) {
-		sys->infinite_mod = 1;
-		sys->status = 3;
-	}
-	else if (sfKeyboard_isKeyPressed(sfKeyReturn) && sys->select == 2 && sys->have_player == 0) {
-		sys->obj[0] = add_sprite(sys, "assets/img/chracters/player_red.png",
-		(sfVector2f){100, 764}, (sfIntRect){0, 0, 118, 100}, 0);
-		sys->infinite_mod = 1;
-		sys->status = 3;
-	}
-}
-
-void render_main(sys_t *sys)
-{
-	int i = 1;
-
-	sfRenderWindow_drawSprite(sys->win, sys->bg[0]->sprite, NULL);
-	sfRenderWindow_drawSprite(sys->win, sys->bg[1]->sprite, NULL);
-	for (i = 1; i != 6; i++)
-		sfRenderWindow_drawText(sys->win, sys->menu[i]->text, NULL);
-	analyse_events(sys);
-	sfRenderWindow_display(sys->win);
 }
 
 void display_text_main_menu(sys_t *sys)
@@ -79,4 +80,15 @@ void display_text_main_menu(sys_t *sys)
 	sfText_setColor(sys->menu[sys->select + 1]->text, sfGreen);
 	sfText_setCharacterSize(sys->menu[sys->select + 1]->text, 80);
 	sfClock_restart(sys->clock);
+}
+
+void render_main_menu(sys_t *sys)
+{
+	int i = 1;
+
+	sfRenderWindow_drawSprite(sys->win, sys->bg[0]->sprite, NULL);
+	sfRenderWindow_drawSprite(sys->win, sys->bg[1]->sprite, NULL);
+	for (i = 1; i != 6; i++)
+	sfRenderWindow_drawText(sys->win, sys->menu[i]->text, NULL);
+	sfRenderWindow_display(sys->win);
 }

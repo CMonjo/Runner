@@ -7,6 +7,15 @@
 
 #include "main.h"
 
+void which_mod(sys_t *sys)
+{
+	if (sys->infinite_mod == 0) {
+		scrolling_map(sys);
+		check_victory(sys);
+	} else
+		scrolling_infinite_map(sys);
+}
+
 void scrolling_map(sys_t *sys)
 {
 	int i = 1;

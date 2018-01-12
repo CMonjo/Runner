@@ -24,6 +24,7 @@ SRC	=	src/main.c		\
 		src/close_game.c	\
 		src/score.c		\
 		src/game_detection.c	\
+		src/init_game.c		\
 		src/end_game_menu.c	\
 		src/restart_game.c	\
 		src/objects_handling.c
