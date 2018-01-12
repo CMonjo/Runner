@@ -7,6 +7,12 @@
 
 #include "main.h"
 
+void check_jump(sys_t *sys)
+{
+	if (sfKeyboard_isKeyPressed(sfKeySpace) || sys->jump == 1)
+		jump_player(sys);
+}
+
 void jump_player(sys_t *sys)
 {
 	static int key = 0;

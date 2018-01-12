@@ -7,12 +7,6 @@
 
 #include "main.h"
 
-void check_jump(sys_t *sys)
-{
-	if (sfKeyboard_isKeyPressed(sfKeySpace) || sys->jump == 1)
-		jump_player(sys);
-}
-
 void analyse_events(sys_t *sys)
 {
 	while (sfRenderWindow_pollEvent(sys->win, &(sys->event))) {
