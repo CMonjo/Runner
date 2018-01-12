@@ -52,8 +52,8 @@ typedef struct sys_s {
 	char **map;
 	char *score;
 	float seconds;
-	obj_t *obj[10000];
-	menu_t *menu[10000];
+	obj_t *obj[100000];
+	menu_t *menu[17];
 	bg_t *bg[8];
 } sys_t;
 

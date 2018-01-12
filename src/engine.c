@@ -7,7 +7,8 @@
 
 #include "main.h"
 
-obj_t *add_sprite(sys_t *sys, const char *path_sprite, sfVector2f pos, sfIntRect rect, int kill)
+obj_t *add_sprite(sys_t *sys, const char *path_sprite, sfVector2f pos,
+	sfIntRect rect, int kill)
 {
 	obj_t *new = malloc(sizeof(obj_t));
 	if (new == NULL)

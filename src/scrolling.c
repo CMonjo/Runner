@@ -43,20 +43,20 @@ void scrolling_infinite_map(sys_t *sys)
 
 void draw_background(sys_t *sys)
 {
-	int i = 4;
+	int i = 3;
 	sfVector2f pos_tmp = {0, 0};
 
-	for (i = 4; i < 7; i++) {
+	for (i = 3; i < 6; i++) {
 		if (sys->bg[i]->pos.x == -1920)
 			sys->bg[i]->pos.x = 0;
-		pos_tmp.x = sys->bg[4]->pos.x - 1920;
+		pos_tmp.x = sys->bg[3]->pos.x - 1920;
 		sfSprite_setPosition(sys->bg[i]->sprite, pos_tmp);
 		sfRenderWindow_drawSprite(sys->win, sys->bg[i]->sprite, NULL);
 	}
-	sys->bg[4]->pos.x = sys->bg[4]->pos.x - 5;
-	sys->bg[5]->pos.x = sys->bg[5]->pos.x - 4;
-	sys->bg[6]->pos.x = sys->bg[6]->pos.x - 3;
+	sys->bg[3]->pos.x = sys->bg[3]->pos.x - 5;
+	sys->bg[4]->pos.x = sys->bg[4]->pos.x - 4;
+	sys->bg[5]->pos.x = sys->bg[5]->pos.x - 3;
+	sfSprite_setPosition(sys->bg[3]->sprite, sys->bg[3]->pos);
 	sfSprite_setPosition(sys->bg[4]->sprite, sys->bg[4]->pos);
 	sfSprite_setPosition(sys->bg[5]->sprite, sys->bg[5]->pos);
-	sfSprite_setPosition(sys->bg[6]->sprite, sys->bg[6]->pos);
 }

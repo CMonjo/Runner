@@ -7,12 +7,17 @@
 
 #include "main.h"
 
-void move_select_option_menu(sys_t *sys)
+void select_main_menu(sys_t *sys)
 {
-	if (sys->select > 3)
-		sys->select = 1;
-	if (sys->select < 1)
-		sys->select = 3;
+	if (sfKeyboard_isKeyPressed(sfKeyUp)) {
+		sys->select --;
+		sfMusic_play(sys->music_menu);
+	}
+	if (sfKeyboard_isKeyPressed(sfKeyDown)) {
+		sys->select ++;
+		sfMusic_play(sys->music_menu);
+	}
+	move_select_menu(sys, 4, 1);
 }
 
 void select_option_menu(sys_t *sys)
@@ -25,6 +30,7 @@ void select_option_menu(sys_t *sys)
 		sys->select ++;
 		sfMusic_play(sys->music_menu);
 	}
+	move_select_menu(sys, 3, 1);
 }
 
 void choose_color_player_option_menu(sys_t *sys)

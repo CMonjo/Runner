@@ -26,8 +26,10 @@ void create_variable(sys_t *sys)
 }
 
 void init_window(sys_t *sys)
-{	sfVideoMode mode = {1920, 1080, 32};
-	sys->win = sfRenderWindow_create(mode, "MyRunner", sfResize | sfClose, NULL);
+{
+	sfVideoMode mode = {1920, 1080, 32};
+	sys->win = sfRenderWindow_create(mode, "MyRunner",
+	sfResize | sfClose, NULL);
 	sfRenderWindow_setFramerateLimit(sys->win, 60);
 	create_variable(sys);
 	init_text_menu(sys);

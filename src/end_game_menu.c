@@ -17,10 +17,7 @@ void which_end_option(sys_t *sys)
 		sys->select ++;
 		sfMusic_play(sys->music_menu);
 	}
-	if (sys->select > 2)
-		sys->select = 1;
-	if (sys->select < 1)
-		sys->select = 2;
+	move_select_menu(sys, 2, 1);
 }
 
 void display_end_menu(sys_t *sys)
@@ -42,7 +39,8 @@ void display_end_menu(sys_t *sys)
 void render_end(sys_t *sys)
 {
 	sfRenderWindow_clear(sys->win, sfBlack);
-	sys->menu[10] = set_text("assets/font/bold.ttf", (sfVector2f){450, 900}, sys->score, 50);
+	sys->menu[10] = set_text("assets/font/bold.ttf",
+	(sfVector2f){450, 900}, sys->score, 50);
 	sfRenderWindow_drawSprite(sys->win, sys->bg[0]->sprite, NULL);
 	sfRenderWindow_drawText(sys->win, sys->menu[10]->text, NULL);
 	sfRenderWindow_drawText(sys->win, sys->menu[11]->text, NULL);

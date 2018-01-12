@@ -7,27 +7,6 @@
 
 #include "main.h"
 
-void move_select_main_menu(sys_t *sys)
-{
-	if (sys->select > 4)
-		sys->select = 1;
-	if (sys->select < 1)
-		sys->select = 4;
-}
-
-void select_main_menu(sys_t *sys)
-{
-	if (sfKeyboard_isKeyPressed(sfKeyUp)) {
-		sys->select --;
-		sfMusic_play(sys->music_menu);
-	}
-	if (sfKeyboard_isKeyPressed(sfKeyDown)) {
-		sys->select ++;
-		sfMusic_play(sys->music_menu);
-	}
-	move_select_main_menu(sys);
-}
-
 void choose_option_main_menu(sys_t *sys)
 {
 	if (sfKeyboard_isKeyPressed(sfKeyReturn) && sys->select == 3) {

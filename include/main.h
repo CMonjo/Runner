@@ -59,7 +59,6 @@
 	void render_option_menu(sys_t *sys);
 	void select_option_menu(sys_t *sys);
 	void choose_color_player_option_menu(sys_t *sys);
-	void move_select_option_menu(sys_t *sys);
 	void display_text_option_menu(sys_t *sys);
 	void option_menu(sys_t *sys);
 	void select_main_menu(sys_t *sys);
@@ -88,4 +87,5 @@
 	void which_end_option(sys_t *sys);
 	void display_end_menu(sys_t *sys);
 	void restart_game_loop(sys_t *sys);
+	void move_select_menu(sys_t *sys, int max, int min);
 #endif

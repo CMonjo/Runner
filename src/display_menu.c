@@ -7,6 +7,14 @@
 
 #include "main.h"
 
+void move_select_menu(sys_t *sys, int max, int min)
+{
+	if (sys->select > max)
+		sys->select = min;
+	if (sys->select < min)
+		sys->select = max;
+}
+
 void back_option(sys_t *sys)
 {
 	if (sfKeyboard_isKeyPressed(sfKeyReturn) && sys->select == 3) {
