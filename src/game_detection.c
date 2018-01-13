@@ -35,11 +35,11 @@ void check_jump(sys_t *sys)
 
 void check_collision(sys_t *sys)
 {
-	int i = 0;
+	int i = 1;
 	unsigned int player_x = sys->obj[0]->pos.x;
 	unsigned int player_y = sys->obj[0]->pos.y;
-	unsigned int obj_x = 0;
-	unsigned int obj_y = 0;
+	unsigned int obj_x;
+	unsigned int obj_y;
 
 	for (i = 1; sys->obj[i] != NULL; i++) {
 		obj_x = sys->obj[i]->pos.x;

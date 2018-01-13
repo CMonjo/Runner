@@ -23,6 +23,7 @@ void create_variable(sys_t *sys)
 		sys->infinite_mod = 0;
 	sys->jump = 0;
 	sys->int_score = 0;
+	sys->score = malloc(sizeof(char) * 10 + 1);
 }
 
 void init_window(sys_t *sys)

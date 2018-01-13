@@ -25,12 +25,6 @@ void init_score(sys_t *sys, long nbr)
 
 void display_score(sys_t *sys)
 {
-	int key = 0;
-
-	if (key == 0) {
-		sys->score = malloc(sizeof(char) * 10 + 1);
-		key = 1;
-	}
 	sys->int_score = sys->int_score + 30;
 	init_score(sys, sys->int_score);
 	sys->menu[10] = set_text("assets/font/bold.ttf", (sfVector2f){180, 0}, sys->score, 50);

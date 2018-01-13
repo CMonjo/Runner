@@ -32,12 +32,23 @@ void destroy_objects(sys_t *sys)
 
 void free_options(sys_t *sys)
 {
-	for (int i = 0; i != 10; i++) {
+	int i = 0;
+
+	for (i = 0; i != 10; i++)
 		free(sys->map[i]);
-	}
-	for (int k = 0; k != 4; k++)
-		free(sys->obj[k]);
+	for (i = 0; sys->obj[i] != NULL; i++)
+		free(sys->obj[i]);
+	for (i = 0; sys->menu[i] != NULL; i++)
+		free(sys->menu[i]);
 	free(sys->map);
 	free(sys->score);
 	free(sys);
 }
+
+// for (int i = 0; i != 10; i++)
+// 	free(sys->map[i]);
+// for (int k = 0; k != 4; k++)
+// 	free(sys->obj[k]);
+// free(sys->map);
+// free(sys->score);
+// free(sys);

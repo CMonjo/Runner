@@ -19,6 +19,7 @@ int print_h(char const *filepath)
 	if (rd <= 0)
 		return (84);
 	write(1, buffer, rd);
+	free(buffer);
 	return (0);
 }
 
