@@ -27,5 +27,6 @@ void display_score(sys_t *sys)
 {
 	sys->int_score = sys->int_score + 30;
 	init_score(sys, sys->int_score);
-	sys->menu[10] = set_text("assets/font/bold.ttf", (sfVector2f){180, 0}, sys->score, 50);
+	sys->menu[10] = set_text("assets/font/bold.ttf",
+	(sfVector2f){180, 0}, sys->score, 50);
 }

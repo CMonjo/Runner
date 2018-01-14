@@ -44,11 +44,3 @@ void free_options(sys_t *sys)
 	free(sys->score);
 	free(sys);
 }
-
-// for (int i = 0; i != 10; i++)
-// 	free(sys->map[i]);
-// for (int k = 0; k != 4; k++)
-// 	free(sys->obj[k]);
-// free(sys->map);
-// free(sys->score);
-// free(sys);
