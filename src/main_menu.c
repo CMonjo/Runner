@@ -27,8 +27,9 @@ void choose_player_main_menu(sys_t *sys)
 	else if (sfKeyboard_isKeyPressed(sfKeyReturn) && sys->select == 2
 	&& sys->have_player == 0) {
 		sys->obj[0] = add_sprite(sys,
-			"assets/img/chracters/player_red.png",
-			(sfVector2f){100, 764}, (sfIntRect){0, 0, 118, 100}, 0);
+			"assets/img/chracters/playerR.png",
+			(sfVector2f){100, 764},
+			(sfIntRect){0, 0, 118, 100}, 0);
 		sys->infinite_mod = 1;
 		sys->status = 3;
 	}
@@ -42,8 +43,9 @@ void choose_game_main_menu(sys_t *sys)
 	else if (sfKeyboard_isKeyPressed(sfKeyReturn) && sys->select == 1
 	&& sys->have_player == 0) {
 		sys->obj[0] = add_sprite(sys,
-			"assets/img/chracters/player_red.png",
-			(sfVector2f){100, 764}, (sfIntRect){0, 0, 118, 100}, 0);
+			"assets/img/chracters/playerR.png",
+			(sfVector2f){100, 764},
+			(sfIntRect){0, 0, 118, 100}, 0);
 		sys->status = 3;
 	}
 }
