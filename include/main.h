@@ -32,7 +32,7 @@
 	int my_put_nbr(int nb);
 	void my_putchar(char c);
 	int my_strlen(char const *str);
-	obj_t *add_sprite(sys_t *sys, const char *path_sprite, sfVector2f pos, sfIntRect rect, int kill);
+	obj_t *add_sprite(sys_t *sys, const char *path_sprite, sfVector2f pos, sfIntRect rect);
 	bg_t *add_sprite_bg(const char *path_sprite, sfVector2f pos, sfIntRect rect);
 	menu_t *set_text(char *font, sfVector2f pos, char *text, int size);
 	int main(int ac, char **av);

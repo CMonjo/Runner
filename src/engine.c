@@ -8,7 +8,7 @@
 #include "main.h"
 
 obj_t *add_sprite(sys_t *sys, const char *path_sprite, sfVector2f pos,
-	sfIntRect rect, int kill)
+	sfIntRect rect)
 {
 	obj_t *new = malloc(sizeof(obj_t));
 	if (new == NULL)
@@ -21,7 +21,6 @@ obj_t *add_sprite(sys_t *sys, const char *path_sprite, sfVector2f pos,
 	sfSprite_setTextureRect(new->sprite, new->rect);
 	sfSprite_setPosition(new->sprite, new->pos);
 	sys->count_obj++;
-	new->kill = kill;
 	return (new);
 }
 

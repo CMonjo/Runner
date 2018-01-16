@@ -38,7 +38,7 @@ void choose_color_player_option_menu(sys_t *sys)
 	if (sfKeyboard_isKeyPressed(sfKeyReturn) && sys->select == 1) {
 		sys->obj[0] = add_sprite(sys,
 			"assets/img/chracters/playerR.png", (sfVector2f)
-			{100, 764}, (sfIntRect){0, 0, 118, 100}, 0);
+			{100, 764}, (sfIntRect){0, 0, 118, 100});
 		sys->select = 1;
 		sys->status = 0;
 		sys->have_player = 1;
@@ -47,7 +47,7 @@ void choose_color_player_option_menu(sys_t *sys)
 	if (sfKeyboard_isKeyPressed(sfKeyReturn) && sys->select == 2) {
 		sys->obj[0] = add_sprite(sys,
 			"assets/img/chracters/playerB.png", (sfVector2f)
-			{100, 764}, (sfIntRect){0, 0, 118, 100}, 0);
+			{100, 764}, (sfIntRect){0, 0, 118, 100});
 		sys->select = 1;
 		sys->status = 0;
 		sys->have_player = 1;

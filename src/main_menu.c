@@ -29,7 +29,8 @@ void choose_player_main_menu(sys_t *sys)
 		sys->obj[0] = add_sprite(sys,
 			"assets/img/chracters/playerR.png",
 			(sfVector2f){100, 764},
-			(sfIntRect){0, 0, 118, 100}, 0);
+			(sfIntRect){0, 0, 118, 100});
+		sys->obj[0]->kill = 0;
 		sys->infinite_mod = 1;
 		sys->status = 3;
 	}
@@ -45,7 +46,8 @@ void choose_game_main_menu(sys_t *sys)
 		sys->obj[0] = add_sprite(sys,
 			"assets/img/chracters/playerR.png",
 			(sfVector2f){100, 764},
-			(sfIntRect){0, 0, 118, 100}, 0);
+			(sfIntRect){0, 0, 118, 100});
+		sys->obj[0]->kill = 0;
 		sys->status = 3;
 	}
 }
