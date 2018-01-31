@@ -40,7 +40,7 @@ int open_map(sys_t *sys, char const *filepath)
 		line = NULL;
 		i++;
 	}
-	if (sys->map[10] != NULL)
+	if (i != 10)
 		return (84);
 	fclose(fp);
 	free (line);

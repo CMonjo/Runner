@@ -16,6 +16,7 @@ USER INTERACTIONS
 	ENTER select option into the menu.
 
 MAP EDITOR
+	/!\ THE MAP MUST HAVE ONLY 10 LINES, IF THERE ARE FEWER OR MORE, THE PROGRAM WILL NOT RUN /!\
 	Map have only 10 lines, the ground must be defined on the last two lines by blocks : '1', '2', '3' or '0' (empty).
 	The obstacles must be placed on the third line only.
 	- 0 = empty case
